@@ -40,4 +40,5 @@ class User(UserMixin, db.Model):
     # Timestamp when the record was last updated
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
-    
+    # One-to-one relationship with LeaveRequest
+    leave_request = db.relationship('LeaveRequest', uselist=False, backref='user', lazy=True)

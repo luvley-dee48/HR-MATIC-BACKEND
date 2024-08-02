@@ -5,5 +5,7 @@ from app import db
 #importing the  UserMixin (install this in your laptop pip install flask-login )
 from flask_login import UserMixin
 
+# User class inherits from SQLAlchemy's Model and Flask-Login's UserMixin
+class User(UserMixin, db.Model):
+      # Define the name of the table in the database
 
-    

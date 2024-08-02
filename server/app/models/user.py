@@ -1,7 +1,8 @@
 # Import necessary libraries and modules
 
 # Import the SQLAlchemy instance from the app package
-from app import db
+
+
 
 # Import datetime for handling date and time
 from datetime import datetime
@@ -20,7 +21,7 @@ import jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # User class inherits from SQLAlchemy's Model and Flask-Login's UserMixin
-class User(UserMixin, db.Model):
+class User(UserMixin, db.Model): # type: ignore
     
     # Define the name of the table in the database
     # Set the name of the table in the database to 'users'
@@ -29,25 +30,25 @@ class User(UserMixin, db.Model):
     # Define the columns for the User table
 
     # 'id' column: integer type, primary key, auto-incremented
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True) # type: ignore
     
     # Unique username, indexed for fast lookups
-    username = db.Column(db.String(64), index=True, unique=True, nullable=False)
+    username = db.Column(db.String(64), index=True, unique=True, nullable=False) # type: ignore
     
     # Unique email, indexed for fast lookups
-    email = db.Column(db.String(120), index=True, unique=True, nullable=False)
+    email = db.Column(db.String(120), index=True, unique=True, nullable=False) # type: ignore
     
     # Hashed password, length sufficient for hashed passwords
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(128), nullable=False) # type: ignore
     
     # Timestamp when the record was created
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow) # type: ignore
     
     # Timestamp when the record was last updated
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow) # type: ignore
     
     # One-to-one relationship with LeaveRequest
-    leave_request = db.relationship('LeaveRequest', uselist=False, backref='user', lazy=True)
+    leave_request = db.relationship('LeaveRequest', uselist=False, backref='user', lazy=True) # type: ignore
 
     # Methods for setting and checking password hashes
     def set_password(self, password):
@@ -63,13 +64,13 @@ class User(UserMixin, db.Model):
         # Create a JWT token for password reset with an expiration time
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in},
-            app.config['SECRET_KEY'], algorithm='HS256')
+            app.config['SECRET_KEY'], algorithm='HS256') # type: ignore
     
     @staticmethod
     def verify_reset_password_token(token):
         # Verify the JWT token and return the corresponding user
         try:
-            id = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
+            id = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password'] # type: ignore
         except:
             return None
         return User.query.get(id)

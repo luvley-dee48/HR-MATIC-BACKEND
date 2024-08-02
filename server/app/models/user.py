@@ -9,3 +9,11 @@ from flask_login import UserMixin
 class User(UserMixin, db.Model):
       # Define the name of the table in the database
 
+       # Set the name of the table in the database to 'users'
+    __tablename__ = 'users'
+
+     # Define the columns for the User table
+     
+      # 'id' column: integer type, primary key, auto-incremented
+    id = db.Column(db.Integer, primary_key=True)
+    

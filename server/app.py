@@ -2,7 +2,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from flask_restful import Api
 from datetime import timedelta
-from user import db
+from server.user import db
 
 # Initializing Flask application
 app = Flask(__name__)

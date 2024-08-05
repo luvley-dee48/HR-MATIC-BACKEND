@@ -1,19 +1,14 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ className = '', propTextDecoration, propFontWeight }) => {
-  const loginStyle = useMemo(() => {
-    return {
-      textDecoration: propTextDecoration,
-      fontWeight: propFontWeight,
-    };
-  }, [propTextDecoration, propFontWeight]);
-
   return (
-    <div className={`rounded-xl bg-mediumpurple-100 flex flex-row items-start justify-start py-[13px] px-[47px] text-left text-xl text-white ${className}`}>
-      <b className="relative inline-block min-w-[55px]" style={loginStyle}>
-        Login</b>
-    </div>
+    <button
+      className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-500 hover:bg-purple-600 ${className}`}
+      style={{ textDecoration: propTextDecoration, fontWeight: propFontWeight }}
+    >
+      Login
+    </button>
   );
 };
 
@@ -24,5 +19,3 @@ Button.propTypes = {
 };
 
 export default Button;
-
-

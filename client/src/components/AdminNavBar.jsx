@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/Logo.png'; 
 
-const AdminNavBar = () => {
+const AdminNavBar = ({ handleLogout }) => {
   return (
     <nav className="navbar bg-mediumpurple-100-20 p-4 flex justify-between items-center">
       <div className="flex items-center space-x-4">
@@ -21,7 +21,7 @@ const AdminNavBar = () => {
         <Link to="/leave-allocation" className="text-black">Leave Allocation</Link>
         <Link to="/users" className="text-black">Users</Link>
       </div>
-      <button className="bg-mediumpurple-100-90 text-white px-4 py-2 rounded" onClick={() => {/* Handle logout logic */}}>
+      <button className="bg-mediumpurple-100-90 text-white px-4 py-2 rounded" onClick={() => {handleLogout}}>
         Logout
       </button>
     </nav>
@@ -29,3 +29,4 @@ const AdminNavBar = () => {
 };
 
 export default AdminNavBar;
+

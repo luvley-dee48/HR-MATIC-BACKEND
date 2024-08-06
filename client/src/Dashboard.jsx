@@ -6,7 +6,7 @@ const Dashboard = () => {
     <div>
       <AdminNavBar />
       <div className="dashboard-content">
-        {/* Your dashboard content goes here */}
+        {}
       </div>
     </div>
   );

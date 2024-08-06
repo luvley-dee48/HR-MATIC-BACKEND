@@ -17,6 +17,10 @@ function App() {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -67,10 +71,12 @@ const HomePage = ({ isLoggedIn, children }) => {
         )}
       </nav>
       <div>
-        {isDashboard ? <AdminNavBar /> : children}
+        {/* {isDashboard ? <AdminNavBar handleLogout={handleLogout} /> : children} */}
+        {!isLogin? <AdminNavBar handleLogout={handleLogout} /> : children}
       </div>
     </div>
   );
 };
 
 export default App;
+

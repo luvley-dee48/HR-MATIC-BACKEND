@@ -1,53 +1,3 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
-// const Login = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleLogin = (e) => {
-//     e.preventDefault();
-//     // Add authentication logic here
-//     // On successful login, navigate to the dashboard
-//     navigate('/dashboard');
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gray-200">
-//       <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow-md">
-//         <h2 className="text-2xl mb-4">Login</h2>
-//         <div className="mb-4">
-//           <label className="block text-sm mb-2">Username</label>
-//           <input
-//             type="text"
-//             value={username}
-//             onChange={(e) => setUsername(e.target.value)}
-//             className="border rounded w-full p-2"
-//             required
-//           />
-//         </div>
-//         <div className="mb-4">
-//           <label className="block text-sm mb-2">Password</label>
-//           <input
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             className="border rounded w-full p-2"
-//             required
-//           />
-//         </div>
-//         <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">
-//           Login
-//         </button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
 import React, { useState } from 'react';
 import logo from '../assets/images/Logo.png';
 import { useNavigate } from 'react-router-dom';
@@ -56,18 +6,17 @@ const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const validEmail = 'admin@example.com'; // hardcoded email
-  const validPassword = 'password123'; // hardcoded password
-
+  const validEmail = 'admin@example.com'; 
+  const validPassword = 'password123'; 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Check if email and password match the hardcoded values
+    
     if (email === validEmail && password === validPassword) {
-      onLogin(); // Call the login handler
-      navigate('/dashboard'); // Redirect to the dashboard
+      onLogin(); 
+      navigate('/dashboard'); 
     } else {
-      alert('Invalid email or password!'); // Show an error alert
+      alert('Invalid email or password!'); 
     }
   };
 
@@ -84,7 +33,7 @@ const LoginPage = ({ onLogin }) => {
               type="email"
               required
               value={email}
-              onChange={(e) => setEmail(e.target.value)} // Update email state
+              onChange={(e) => setEmail(e.target.value)} 
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm input-grey"
               placeholder="email"
             />
@@ -96,7 +45,7 @@ const LoginPage = ({ onLogin }) => {
               type="password"
               required
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // Update password state
+              onChange={(e) => setPassword(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm input-grey"
               placeholder="password"
             />

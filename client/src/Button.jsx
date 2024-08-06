@@ -1,3 +1,4 @@
+
 import PropTypes from 'prop-types';
 
 const Button = ({ propTextDecoration, propFontWeight, buttonPosition, buttonWidth, login, loginMinWidth }) => {
@@ -21,3 +22,4 @@ Button.propTypes = {
 };
 
 export default Button;
+

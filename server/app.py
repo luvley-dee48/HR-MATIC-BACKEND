@@ -186,4 +186,4 @@ api.add_resource(LeaveAllocations, '/leave-allocations')
 api.add_resource(LeaveAllocationById, '/leave-allocations/<int:id>')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5555)
+    app.run(host="0.0.0.0", port=5555, debug=True)

@@ -1,34 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/images/Logo.png';
+import { useNavigate } from 'react-router-dom';
 
+const LoginPage = ({ onLogin }) => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const validEmail = 'admin@example.com';
+  const validPassword = 'password123'; 
 
-const LoginPage = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    
+    if (email === validEmail && password === validPassword) {
+      onLogin(); 
+      navigate('/dashboard'); 
+    } else {
+      alert('Invalid email or password!');
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-white-50">
-      <div className="login-container bg-white p-12 rounded-lg shadow-lg w-96 relative ">
-      <img src={logo} alt="Logo" className="mx-auto mb-4 w-20 h-20" />
+      <div className="login-container bg-white p-12 rounded-lg shadow-lg w-96 relative">
+        <img src={logo} alt="Logo" className="mx-auto mb-4 w-20 h-20" />
         <h2 className="text-2xl font-bold mb-8 text-center mt-4">SIGN IN TO YOUR ACCOUNT</h2>
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-            {/* <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label> */}
             <input
               id="email"
               name="email"
               type="email"
-              // autoComplete="email"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} 
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm input-grey"
               placeholder="email"
             />
           </div>
           <div>
-            {/* <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label> */}
             <input
               id="password"
               name="password"
               type="password"
-              // autoComplete="current-password"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} 
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm input-grey"
               placeholder="password"
             />
@@ -48,3 +66,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

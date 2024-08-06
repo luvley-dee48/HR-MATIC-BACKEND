@@ -5,30 +5,32 @@ import logo from '../assets/images/Logo.png';
 const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96 ">
+      <div className="login-container bg-white p-12 rounded-lg shadow-lg w-96 relative ">
       <img src={logo} alt="Logo" className="mx-auto mb-4 w-20 h-20" />
         <h2 className="text-2xl font-bold mb-8 text-center mt-4">SIGN IN TO YOUR ACCOUNT</h2>
         <form className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            {/* <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label> */}
             <input
               id="email"
               name="email"
               type="email"
-              autoComplete="email"
+              // autoComplete="email"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm input-grey"
+              placeholder="email"
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+            {/* <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label> */}
             <input
               id="password"
               name="password"
               type="password"
-              autoComplete="current-password"
+              // autoComplete="current-password"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm input-grey"
+              placeholder="password"
             />
           </div>
           <div>

@@ -139,3 +139,15 @@ button:focus-visible {
   margin: 0 10px;
 }
 
+
+.login-container {
+  border-left: 4px solid #a78bfa; 
+  /* border-bottom: 4px solid #a78bfa; */
+
+  padding-left: 1rem; 
+  /* padding-bottom: 1rem; */
+}
+
+.input-grey {
+  background-color: #f0f0f0;
+}

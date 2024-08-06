@@ -1,10 +1,13 @@
 import React from 'react';
+import logo from '../assets/images/Logo.png';
+
 
 const LoginPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold mb-8 text-center">SIGN IN TO YOUR ACCOUNT</h2>
+    <div className="min-h-screen flex items-center justify-center bg-white-50">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-96 ">
+      <img src={logo} alt="Logo" className="mx-auto mb-4 w-20 h-20" />
+        <h2 className="text-2xl font-bold mb-8 text-center mt-4">SIGN IN TO YOUR ACCOUNT</h2>
         <form className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>

@@ -9,21 +9,24 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="bg-mediumpurple-100-20 p-4 flex justify-between items-center">
+        <nav className= "navbar bg-mediumpurple-100-20 p-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
 
             
             <img
-        className="h-[50px] w-[50px] rounded-[30px] object-contain"
-        loading="lazy"
-        alt="Logo"
-        src={logo}
-      />
+            className="h-[50px] w-[50px] rounded-[30px] object-contain"
+            loading="lazy"
+            alt="Logo"
+            src={logo}
+            />
+            </div>
+             <div className="nav-links flex space-x-4">
             <Link to="/" className="text-black">HR Matic Solutions</Link>
             <Link to="/about" className="text-black">About Us</Link>
             <Link to="/services" className="text-black">Who We Serve</Link>
             <Link to="/contact" className="text-black">Contact Us</Link>
-          </div>
+            </div>
+          
           <Link to="/login" className="bg-mediumpurple-100-90 text-white px-4 py-2 rounded">Login</Link>
         </nav>
         <Routes>

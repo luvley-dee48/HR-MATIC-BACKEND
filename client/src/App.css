@@ -30,6 +30,7 @@ a:hover {
 
 body {
   margin: 0;
+  padding-top: 72px;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -115,3 +116,26 @@ button:focus-visible {
 .read-the-docs {
   color: #888;
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 20px; 
+}
+
+.nav-links { 
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-links a { 
+  margin: 0 10px;
+}
+

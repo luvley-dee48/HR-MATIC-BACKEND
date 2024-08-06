@@ -6,21 +6,16 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Create instance folder if it does not exist
 os.makedirs(os.path.join(os.getcwd(), 'instance'), exist_ok=True)
 
-# Initialize the Flask app
 app = Flask(__name__, instance_relative_config=True)
 
-# Configure the app
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'hr-matic.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["JWT_SECRET_KEY"] = os.getenv('JWT_SECRET_KEY')
 
-# Initialize extensions
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 jwt = JWTManager(app)
@@ -29,10 +24,8 @@ jwt = JWTManager(app)
 
 api = Api(app)
 
-# Import models
 from models import LeaveRequest, LeaveAllocation, User
 
-# Import utility functions
 from utils.helpers import hash_password, verify_password, validate_request_json, response_with_error
 from utils.validators import validate_registration_data, validate_login_data, validate_leave_request_data
 
@@ -89,8 +82,6 @@ def login():
     except Exception as e:
         app.logger.error("Error during login: %s", e)
         return jsonify({"msg": "Internal Server Error"}), 500
-
-# Define routes for leave requests and leave allocations
 
 class LeaveRequests(Resource):
     @jwt_required()

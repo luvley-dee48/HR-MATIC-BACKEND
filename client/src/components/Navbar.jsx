@@ -1,37 +1,35 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/Logo.png";
 
 export default function Navbar() {
   return (
-    <nav className="navbar bg-mediumpurple-100-20">
-      <div className="max-w-[1100px] mx-auto flex justify-between items-center w-full">
+    <nav className="bg-purple-100 p-4">
+      <div className="max-w-6xl mx-auhref flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <img
-            className="h-[50px] w-[50px] rounded-[30px] object-contain px-2 py-2"
+            className="h-12 w-12 rounded-full object-contain"
             loading="lazy"
             alt="Logo"
             src={logo}
           />
         </div>
-        <div className="nav-links flex space-x-4">
-          <Link to="/" className="text-black">
+        <div className="flex space-x-4">
+          <a href="#home" className="text-[#646cff] hover:text-[#535bf2]">
             HR Matic Solutions
-          </Link>
-          <Link to="/about" className="text-black">
+          </a>
+          <a href="#about" className="text-black">
             About Us
-          </Link>
-          <Link to="/services" className="text-black">
+          </a>
+          <a href="#services" className="text-black">
             Who We Serve
-          </Link>
-          <Link to="/contact" className="text-black">
+          </a>
+          <a href="#contact" className="text-black">
             Contact Us
-          </Link>
+          </a>
         </div>
-
         <Link
           to="/login"
-          className="bg-mediumpurple-100-90 text-white px-6 py-3 rounded"
+          className="bg-purple-600 text-white px-4 py-2 rounded"
         >
           Login
         </Link>

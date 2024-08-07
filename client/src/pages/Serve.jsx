@@ -1,11 +1,9 @@
-import Navbar from "../components/Navbar";
+
 
 export default function Serve() {
     return (
-        <>
-
-        <Navbar />
-        <h2>Who we Serve Page</h2>
-        </>
+        <div id="who we serve">
+        <h2>Who We Serve Page</h2>
+        </div>
     )
 }

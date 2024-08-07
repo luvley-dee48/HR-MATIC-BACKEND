@@ -66,14 +66,10 @@ class LeaveRequest(db.Model, SerializerMixin):
     __tablename__ = 'leave_requests'
 
     id = db.Column(db.Integer, primary_key=True)
-
-    # Foreign key to Employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employees.id'), nullable=False)
-   
     start_date = db.Column(db.Date, nullable=False)
     end_date = db.Column(db.Date, nullable=False)
     leave_type = db.Column(db.String(50), nullable=False)
     reason = db.Column(db.String(200), nullable=True)
     approver_name = db.Column(db.String(80), nullable=True)
     status = db.Column(db.String(20), default='Pending')
-

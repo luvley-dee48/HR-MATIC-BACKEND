@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 
 import { AppLayout } from "./layouts/index.jsx";
 
+import HomePage from "./pages/HomePage.jsx";
 import ContactUs from "./pages/ContactPage.jsx";
 import AboutUs from "./pages/AboutPage.jsx";
 import WhoWeServe from "./pages/ServicesPage.jsx";
@@ -40,7 +41,7 @@ function App() {
               path="/login"
               element={<LoginPage onLogin={handleLogin} />}
             />
-            {/* <Route path="/" element={<HomePage />} exact={true} /> */}
+            <Route path="/" element={<HomePage />} exact={true} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/services" element={<WhoWeServe />} />

@@ -20,14 +20,16 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 jwt = JWTManager(app)
 
-
-
 api = Api(app)
 
 from models import LeaveRequest, LeaveAllocation, User
 
 from utils.helpers import hash_password, verify_password, validate_request_json, response_with_error
 from utils.validators import validate_registration_data, validate_login_data, validate_leave_request_data
+
+@app.route('/')
+def index():
+    return jsonify({"message": "Welcome to HR-Matic API"}), 200
 
 @app.route('/register', methods=['POST'])
 @validate_request_json(['username', 'password'])

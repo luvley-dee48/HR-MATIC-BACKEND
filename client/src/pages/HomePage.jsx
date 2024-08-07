@@ -1,6 +1,13 @@
+import Hero from "./HRMaticSolutions";
+import About from "./About";
 
 function HomePage() {
-  return <h1>Welcome to the HomePage</h1>;
+  return (
+    <>
+      <Hero />
+      <About />
+    </>
+  );
 }
 
 export default HomePage;

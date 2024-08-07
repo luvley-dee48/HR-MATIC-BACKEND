@@ -4,7 +4,7 @@ export default function HRMaticSolutions() {
   return (
     <div className="container mx-auto px-6 py-12 max-w-6xl" id="home">
       <section className="flex flex-col lg:flex-row justify-center">
-        <div className="lg:w-1/2 text-left flex flex-col">
+        <div className="lg:w-1/2 text-left flex flex-col justify-center">
           <h1 className="text-4xl font-semibold leading-normal">
             <span className="text-purple-600">HR Solutions</span> that Scale
             With Your Business

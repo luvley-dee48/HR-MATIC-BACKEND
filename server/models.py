@@ -22,8 +22,11 @@ class Department(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     description = db.Column(db.String(200), nullable=True)
-    employees = db.relationship('Employee', backref='department', lazy=True)
 
+        # Relationship to Employee
+    employees = db.relationship('Employee', backref='department', lazy=True)
+ 
+ 
 class Employee(db.Model, SerializerMixin):
     __tablename__ = 'employees'
 
@@ -35,7 +38,10 @@ class Employee(db.Model, SerializerMixin):
     phonenumber = db.Column(db.String(20), nullable=False)
     address = db.Column(db.String(200), nullable=False)
     job_title = db.Column(db.String(80), nullable=False)
+       
+        # Foreign key to Department
     department_id = db.Column(db.Integer, db.ForeignKey('departments.id'), nullable=False)
+    
     date_hired = db.Column(db.DateTime, nullable=False)
     salary = db.Column(db.Integer, nullable=False)
     leave_records = db.Column(db.String(200), nullable=True)
@@ -47,7 +53,10 @@ class LeaveAllocation(db.Model, SerializerMixin):
     __tablename__ = 'leave_allocations'
 
     id = db.Column(db.Integer, primary_key=True)
+    
+    # Foreign key to Employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employees.id'), nullable=False)
+    
     year = db.Column(db.Integer, nullable=False)
     total_days_allocated = db.Column(db.Integer, nullable=False)
     days_used = db.Column(db.Integer, default=0)
@@ -57,7 +66,10 @@ class LeaveRequest(db.Model, SerializerMixin):
     __tablename__ = 'leave_requests'
 
     id = db.Column(db.Integer, primary_key=True)
+
+    # Foreign key to Employee
     employee_id = db.Column(db.Integer, db.ForeignKey('employees.id'), nullable=False)
+   
     start_date = db.Column(db.Date, nullable=False)
     end_date = db.Column(db.Date, nullable=False)
     leave_type = db.Column(db.String(50), nullable=False)

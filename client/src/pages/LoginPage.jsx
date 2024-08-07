@@ -1,23 +1,24 @@
-import{ useState } from 'react';
-import logo2 from '../assets/images/Logo.png';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons'; 
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+import logo2 from "../assets/images/Logo.png";
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
 
 const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const validEmail = 'admin@example.com'; 
-  const validPassword = 'password123'; 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const validEmail = "admin@example.com";
+  const validPassword = "password123";
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (email === validEmail && password === validPassword) {
-      onLogin(); 
-      navigate('/dashboard'); 
+      onLogin();
+      navigate("/dashboard");
     } else {
-      alert('Invalid email or password!'); 
+      alert("Invalid email or password!");
     }
   };
 
@@ -25,9 +26,11 @@ const LoginPage = ({ onLogin }) => {
     <div className="min-h-screen flex items-center justify-center bg-white-50">
       <div className="login-container bg-white p-12 rounded-lg shadow-lg w-96 relative">
         <img src={logo2} alt="Logo" className="mx-auto mb-4 w-20 h-20" />
-        <h2 className="text-2xl font-bold mb-8 text-center mt-4">SIGN IN TO YOUR ACCOUNT</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center mt-4">
+          SIGN IN TO YOUR ACCOUNT
+        </h2>
         <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="relative"> 
+          <div className="relative">
             <input
               id="email"
               name="email"
@@ -38,9 +41,12 @@ const LoginPage = ({ onLogin }) => {
               className="mt-1 block w-full px-3 py-2 pl-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-mediumpurple-100 focus:border-mediumpurple-100 sm:text-sm input-grey"
               placeholder="email"
             />
-            <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200" /> 
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200"
+            />
           </div>
-          <div className="relative"> 
+          <div className="relative">
             <input
               id="password"
               name="password"
@@ -51,7 +57,10 @@ const LoginPage = ({ onLogin }) => {
               className="mt-1 block w-full px-3 py-2 pl-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-mediumpurple-100 focus:border-mediumpurple-100 sm:text-sm input-grey"
               placeholder="password"
             />
-            <FontAwesomeIcon icon={faKey} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200" /> 
+            <FontAwesomeIcon
+              icon={faKey}
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200"
+            />
           </div>
           <div>
             <button
@@ -68,4 +77,3 @@ const LoginPage = ({ onLogin }) => {
 };
 
 export default LoginPage;
-

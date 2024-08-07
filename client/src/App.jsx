@@ -1,36 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import './App.css';
-import logo from './assets/images/Logo.png';
-
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import "./App.css";
+import HRMaticSolutions from "./pages/HRMaticSolutions";  // Import the updated component
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav className= "navbar bg-mediumpurple-100-20 p-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-
-            
-            <img
-            className="h-[50px] w-[50px] rounded-[30px] object-contain"
-            loading="lazy"
-            alt="Logo"
-            src={logo}
-            />
-            </div>
-             <div className="nav-links flex space-x-4">
-            <Link to="/" className="text-black">HR Matic Solutions</Link>
-            <Link to="/about" className="text-black">About Us</Link>
-            <Link to="/services" className="text-black">Who We Serve</Link>
-            <Link to="/contact" className="text-black">Contact Us</Link>
-            </div>
-          
-          <Link to="/login" className="bg-mediumpurple-100-90 text-white px-4 py-2 rounded">Login</Link>
-        </nav>
+        <Navbar />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<HRMaticSolutions />} />  {/* Update the path */}
         </Routes>
       </div>
     </Router>

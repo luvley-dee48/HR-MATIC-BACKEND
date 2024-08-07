@@ -2,7 +2,7 @@ import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate, useLocation } from 'react-router-dom'; 
 import LoginPage from './pages/LoginPage';
 import './App.css';
-import logo from './assets/images/Logo.png';
+import logo2 from './assets/images/Logo2.png';
 import AdminNavBar from './components/AdminNavBar';
 import AboutUs from './pages/AboutPage.jsx';
 import WhoWeServe from './pages/ServicesPage.jsx';
@@ -57,7 +57,7 @@ const HomePage = ({ isLoggedIn, children }) => {
             className="h-[50px] w-[50px] rounded-[30px] object-contain"
             loading="lazy"
             alt="Logo"
-            src={logo}
+            src={logo2}
           />
         </div>
         <div className="nav-links flex space-x-4">
@@ -71,8 +71,7 @@ const HomePage = ({ isLoggedIn, children }) => {
         )}
       </nav>
       <div>
-        {/* {isDashboard ? <AdminNavBar handleLogout={handleLogout} /> : children} */}
-        {!isLogin? <AdminNavBar handleLogout={handleLogout} /> : children}
+        {isDashboard ? <AdminNavBar handleLogout={handleLogout} /> : children}
       </div>
     </div>
   );

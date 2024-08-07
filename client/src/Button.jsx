@@ -5,7 +5,7 @@ const Button = ({ propTextDecoration, propFontWeight, buttonPosition, buttonWidt
   return (
     <button
       style={{ textDecoration: propTextDecoration, fontWeight: propFontWeight, width: buttonWidth, minWidth: loginMinWidth }}
-      className={`py-2 px-4 rounded bg-blue-500 text-white`}
+      className={`py-2 px-4 rounded bg-mediumpurple-100-90 text-white`}
     >
       {login}
     </button>

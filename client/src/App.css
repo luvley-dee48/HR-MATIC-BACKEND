@@ -1,9 +1,9 @@
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-Custom styles
+/* Custom styles */
+/*
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -126,7 +126,7 @@ button:focus-visible {
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
-  padding: 0 20px; 
+  padding:  0px; 
 }
 
 .nav-links { 
@@ -142,12 +142,11 @@ button:focus-visible {
 
 .login-container {
   border-left: 4px solid #a78bfa; 
-  /* border-bottom: 4px solid #a78bfa; */
-
-  padding-left: 1rem; 
-  /* padding-bottom: 1rem; */
+  border-bottom: 4px solid #a78bfa;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
 .input-grey {
   background-color: #f0f0f0;
-}
+} */

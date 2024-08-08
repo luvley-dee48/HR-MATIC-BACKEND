@@ -1,4 +1,4 @@
-import womanImage from "../assets/images/womanImage.png"; // Ensure you have the correct path to the image
+import womanImage from "../assets/images/womanImage.png"; 
 
 export default function HRMaticSolutions() {
   return (

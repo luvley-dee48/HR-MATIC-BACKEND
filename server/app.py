@@ -1,8 +1,34 @@
+#IMPORTS FOR EMPLOYEES
 import sys
 import os
 from flask import Flask, make_response, request, jsonify
 from flask_migrate import Migrate
 from flask_restful import Api,Resource
+
+
+#IMPORTS for department
+import logging
+from flask import Flask, request, jsonify
+from flask_migrate import Migrate
+from models import db, Department,Employee
+
+#for department
+
+app = Flask(__name__)
+#for department
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(os.path.dirname(os.path.abspath(__file__)), "instance")}/app.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ECHO'] = True
+#for department
+
+db.init_app(app)
+migrate = Migrate(app, db)
+#for department
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -12,6 +38,8 @@ from models import db, Employee
 app = Flask(__name__)
 
 base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'instance')
+
+#IMPORTS FOR EMPLOYEES
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{base_dir}/app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -23,7 +51,7 @@ api = Api(app)
 
 migrate = Migrate(app, db)
 
-#routes
+#EMPLOYEES ROUTES!
 class Employees(Resource):
     def get(self):
         employees = Employee.query.all()
@@ -117,27 +145,7 @@ class EmployeesByID(Resource):
 api.add_resource(Employees, '/employees')
 api.add_resource(EmployeesByID, '/employees/<int:id>')
 
-import sys
-import os
-import logging
-from flask import Flask, request, jsonify
-from flask_migrate import Migrate
-from models import db, Department,Employee
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-app = Flask(__name__)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(os.path.dirname(os.path.abspath(__file__)), "instance")}/app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_ECHO'] = True
-
-db.init_app(app)
-migrate = Migrate(app, db)
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
+#DEPARTMENTS ROUTES!
 def validate_department_data(data, allow_empty_name=False):
     """Validate department data."""
     if not isinstance(data, dict):

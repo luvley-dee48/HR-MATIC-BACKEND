@@ -19,7 +19,7 @@ const details = [
 
 export default function About() {
   return (
-    <div className="flex flex-col px-8 my-10">
+    <div className="flex flex-col px-8 my-10" id="about">
       <div className="inline-flex justify-center mw-[50%]">
         <h1 className="text-7xl text-center mb-12">
           Our Full-Service HR <span className="text-purple-600">Solution</span>{" "}

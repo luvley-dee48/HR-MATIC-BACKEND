@@ -11,6 +11,8 @@ const Header = () => {
                 
             </div>
             <div className="notification">
+                <span></span>
+                <i className="fas fa-bell"></i>
                 
             </div>
         </div>

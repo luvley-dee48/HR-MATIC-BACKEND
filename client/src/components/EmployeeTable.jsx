@@ -18,7 +18,7 @@ const EmployeeTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* backend data*/}
+                    {/* backend */}
                 </tbody>
             </table>
         </div>

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
@@ -12,14 +13,13 @@ const Sidebar = () => {
             </div>
             <nav>
                 <ul>
-                    <li>Dashboard</li>
-                    <li>Leave Allocation</li>
-                    <li>Employees</li>
-                    <li>Leave Requests</li>
-                    <li>Departments</li>
-                    <li>Settings</li>
-                    <li>Log Out</li>
-
+                    <li><Link to="/">Dashboard</Link></li>
+                    <li><Link to="/leave-allocation">Leave Allocation</Link></li>
+                    <li><Link to="/employees">Employees</Link></li>
+                    <li><Link to="/leave-requests">Leave Requests</Link></li>
+                    <li><Link to="/departments">Departments</Link></li>
+                    <li><Link to="/settings">Settings</Link></li>
+                    <li><Link to="/logout">Log Out</Link></li>
                 </ul>
             </nav>
         </div>

@@ -76,8 +76,8 @@ class EmployeesByID(Resource):
 
             return response
         else:
-            # employee_dict = employee.to_dict()
-            # print(employee_dict)
+            employee_dict = employee.to_dict()
+            print(employee_dict)
 
             response = make_response(employee.to_dict(), 200)
 

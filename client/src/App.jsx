@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage.jsx";
 import ContactUs from "./pages/ContactPage.jsx";
 import AboutUs from "./pages/AboutPage.jsx";
 import WhoWeServe from "./pages/ServicesPage.jsx";
+import EmployeeDashboard from "./components/EmployeeDahboard.jsx";
 
 import "./App.css";
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/employees" element={<h1>Employees</h1>} />
             <Route path="/departments" element={<h1>Departments</h1>} />
             <Route path="/leave-requests" element={<h1>Leave Requests</h1>} />
+            <Route path="/employee-dashboard" element={<EmployeeDashboard />} /> 
             <Route
               path="/leave-allocation"
               element={<h1>Leave Allocations</h1>}

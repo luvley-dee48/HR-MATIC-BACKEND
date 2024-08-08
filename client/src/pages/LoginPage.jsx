@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import logo2 from '../assets/images/Logo.png';
 import { useNavigate } from 'react-router-dom';
@@ -36,7 +36,9 @@ const LoginPage = ({ onLogin }) => {
     <div className="min-h-screen flex items-center justify-center bg-white-50">
       <div className="login-container bg-white p-12 rounded-lg shadow-lg w-96 relative">
         <img src={logo2} alt="Logo" className="mx-auto mb-4 w-20 h-20" />
-        <h2 className="text-2xl font-bold mb-8 text-center mt-4">SIGN IN TO YOUR ACCOUNT</h2>
+        <h2 className="text-2xl font-bold mb-8 text-center mt-4">
+          SIGN IN TO YOUR ACCOUNT
+        </h2>
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="relative">
             <input

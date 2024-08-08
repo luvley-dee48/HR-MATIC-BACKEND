@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const AdminNavBar = ({ handleLogout }) => {
   return (
     <>
+   
       <div className="nav-links flex space-x-4">
         <Link to="/dashboard" className="text-black">
           Admin Dashboard
@@ -31,7 +32,13 @@ const AdminNavBar = ({ handleLogout }) => {
         Logout
       </button>
     </>
+  
   );
 };
 
 export default AdminNavBar;
+
+
+
+
+

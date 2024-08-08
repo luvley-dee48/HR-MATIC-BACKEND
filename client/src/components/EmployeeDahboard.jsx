@@ -1,76 +1,42 @@
-import React from 'react';
+import React from "react";
+import StatCard from "./StatCard"; 
 
 const EmployeeDashboard = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-64 bg-gray-800 text-white p-4">
+      <div className="w-64 bg-white text-black p-4 shadow-lg">
         <h2 className="text-xl font-semibold mb-4">HR Matic</h2>
         <ul>
           <li className="mb-2">
-            <a href="#" className="block p-2 hover:bg-gray-700">Dashboard</a>
+            <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Dashboard</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="block p-2 hover:bg-gray-700">Leave Allocation</a>
+            <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Employees</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="block p-2 hover:bg-gray-700">Employees</a>
-          </li>
-          <li className="mb-2">
-            <a href="#" className="block p-2 hover:bg-gray-700">Leave Requests</a>
-          </li>
-          <li className="mb-2">
-            <a href="#" className="block p-2 hover:bg-gray-700">Departments</a>
+            <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Leave Requests</a>
           </li>
           <li className="mt-4">
-            <a href="#" className="block p-2 hover:bg-gray-700">Settings</a>
+            <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Profile</a>
           </li>
           <li className="mt-2">
-            <a href="#" className="block p-2 hover:bg-gray-700">Log Out</a>
+            <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Log Out</a>
           </li>
         </ul>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-gray-100 p-6">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-semibold">Employee Dashboard</h1>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Add Employee</button>
-        </div>
-
-        {/* Employees Table */}
-        <div className="bg-white p-4 rounded-md shadow-md">
-          <table className="min-w-full table-auto">
-            <thead>
-              <tr className="bg-gray-200 text-left">
-                <th className="px-4 py-2">Employee Name</th>
-                <th className="px-4 py-2">Department</th>
-                <th className="px-4 py-2">Age</th>
-                <th className="px-4 py-2">Date Hired</th>
-                <th className="px-4 py-2">Salary</th>
-                <th className="px-4 py-2">Address</th>
-                <th className="px-4 py-2">Phone No</th>
-                <th className="px-4 py-2">Email</th>
-                <th className="px-4 py-2">Leave Records</th>
-                <th className="px-4 py-2">Job Title</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border px-4 py-2">Justin George</td>
-                <td className="border px-4 py-2">Marketing</td>
-                <td className="border px-4 py-2">22</td>
-                <td className="border px-4 py-2">02-03-23</td>
-                <td className="border px-4 py-2">$5,000</td>
-                <td className="border px-4 py-2">Kisumu</td>
-                <td className="border px-4 py-2">0712345678</td>
-                <td className="border px-4 py-2">justin@gmail.com</td>
-                <td className="border px-4 py-2">10 days left</td>
-                <td className="border px-4 py-2">HR Assistant</td>
-              </tr>
-              {/* Repeat <tr> for more employees */}
-            </tbody>
-          </table>
+      <div className="flex-1 bg-white p-6">
+        <h1 className="text-2xl font-semibold text-black mb-4">Welcome Back,</h1>
+        
+        <div className="grid grid-cols-3 gap-6">
+          <StatCard title="Days Available" value="7 days" description="To book time off" bgColor="bg-[#A390FC]" />
+          <StatCard title="Pending Requests" value="4 days" description="Tracking Manager's Requests" bgColor="bg-[#E0E7FF]" />
+          <StatCard title="Days Used" value="0 days" description="12 Days Decision Taken" bgColor="bg-[#A390FC]" />
+          <StatCard title="Days Off" value="12 days" description="To book time off" bgColor="bg-[#E0E7FF]" />
+          <StatCard title="Days Available" value="0 days" description="Shows Total Days Used" bgColor="bg-[#A390FC]" />
+          <StatCard title="Days Available for Use" value="21 days" description="Show Total days" bgColor="bg-[#E0E7FF]" />
         </div>
       </div>
     </div>

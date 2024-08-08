@@ -32,9 +32,13 @@ export const theme = {
       'mediumpurple-300-70': 'rgba(161, 77, 255, 0.7)',
       'mediumpurple-300-60': 'rgba(161, 77, 255, 0.6)',
       'mediumpurple-300-50': 'rgba(161, 77, 255, 0.5)',
+      // eslint-disable-next-line no-dupe-keys
       'mediumpurple-100-40': 'rgba(161, 77, 255, 0.4)',
+      // eslint-disable-next-line no-dupe-keys
       'mediumpurple-100-30': 'rgba(161, 77, 255, 0.3)',
+      // eslint-disable-next-line no-dupe-keys
       'mediumpurple-100-20': 'rgba(161, 77, 255, 0.2)',
+      // eslint-disable-next-line no-dupe-keys
       'mediumpurple-100-10': 'rgba(161, 77, 255, 0.1)',
     },
   },

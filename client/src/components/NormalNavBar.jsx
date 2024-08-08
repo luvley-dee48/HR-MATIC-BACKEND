@@ -4,18 +4,18 @@ export default function NormalNavBar() {
   return (
     <>
       <div className="nav-links flex space-x-4">
-        <Link to="/" className="text-black">
+        <a href="#" className="text-black">
           HR Matic Solutions
-        </Link>
-        <Link to="/about" className="text-black">
+        </a>
+        <a href="#about" className="text-black">
           About Us
-        </Link>
-        <Link to="/services" className="text-black">
+        </a>
+        <a href="#services" className="text-black">
           Who We Serve
-        </Link>
-        <Link to="/contact" className="text-black">
+        </a>
+        <a href="#contact" className="text-black">
           Contact Us
-        </Link>
+        </a>
       </div>
       <Link
         to="/login"

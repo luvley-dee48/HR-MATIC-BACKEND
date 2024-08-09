@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
-import logo2 from "../assets/images/Logo.png";
+import PropTypes from "prop-types";
+import logo2 from "../../assets/images/Logo.png";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
@@ -9,14 +9,30 @@ const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const validEmail = "admin@example.com";
-  const validPassword = "password123";
+
+  const users = [
+    { email: "admin@example.com", password: "password123", role: "admin" },
+    {
+      email: "employee@example.com",
+      password: "employee123",
+      role: "employee",
+    },
+  ];
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (email === validEmail && password === validPassword) {
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (user) {
       onLogin();
-      navigate("/dashboard");
+      if (user.role === "admin") {
+        navigate("/admin"); // Admin dashboard
+      } else if (user.role === "employee") {
+        navigate("/employee"); // Employee dashboard
+      }
     } else {
       alert("Invalid email or password!");
     }
@@ -74,6 +90,10 @@ const LoginPage = ({ onLogin }) => {
       </div>
     </div>
   );
+};
+
+LoginPage.propTypes = {
+  onLogin: PropTypes.func.isRequired,
 };
 
 export default LoginPage;

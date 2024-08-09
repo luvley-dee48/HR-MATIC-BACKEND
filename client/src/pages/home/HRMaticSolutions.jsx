@@ -1,4 +1,4 @@
-import womanImage from "../assets/images/womanImage.png"; 
+import womanImage from "../../assets/images/womanImage.png";
 
 export default function HRMaticSolutions() {
   return (

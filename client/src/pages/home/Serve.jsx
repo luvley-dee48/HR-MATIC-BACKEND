@@ -1,4 +1,4 @@
-import img from "../assets/images/guy_shows_group.jpg";
+import img from "../../assets/images/guy_shows_group.jpg";
 
 export default function Serve() {
   return (

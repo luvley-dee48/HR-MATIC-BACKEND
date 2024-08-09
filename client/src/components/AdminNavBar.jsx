@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const AdminNavBar = ({ handleLogout }) => {
   return (
     <>
-   
       <div className="nav-links flex space-x-4">
         <Link to="/dashboard" className="text-black">
           Admin Dashboard
@@ -24,6 +23,9 @@ const AdminNavBar = ({ handleLogout }) => {
         <Link to="/users" className="text-black">
           Users
         </Link>
+        <Link to="/users" className="text-black">
+          Profile
+        </Link>
       </div>
       <button
         className="bg-mediumpurple-100-90 text-white px-4 py-2 rounded"
@@ -32,13 +34,7 @@ const AdminNavBar = ({ handleLogout }) => {
         Logout
       </button>
     </>
-  
   );
 };
 
 export default AdminNavBar;
-
-
-
-
-

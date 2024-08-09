@@ -1,6 +1,7 @@
+
 import PropTypes from 'prop-types';
 
-const Button = ({ propTextDecoration, propFontWeight, buttonWidth, login, loginMinWidth }) => {
+const Button = ({ propTextDecoration, propFontWeight, buttonPosition, buttonWidth, login, loginMinWidth }) => {
   return (
     <button
       style={{ textDecoration: propTextDecoration, fontWeight: propFontWeight, width: buttonWidth, minWidth: loginMinWidth }}

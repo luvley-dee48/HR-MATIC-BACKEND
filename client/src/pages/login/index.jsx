@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import logo2 from "../../assets/images/Logo.png";
+import logo2 from "../../assets/images/Logo.png";  // Use correct relative path
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
@@ -12,26 +12,20 @@ const LoginPage = ({ onLogin }) => {
 
   const users = [
     { email: "admin@example.com", password: "password123", role: "admin" },
-    {
-      email: "employee@example.com",
-      password: "employee123",
-      role: "employee",
-    },
+    { email: "employee@example.com", password: "employee123", role: "employee" },
   ];
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const user = users.find(
-      (u) => u.email === email && u.password === password
-    );
+    const user = users.find(u => u.email === email && u.password === password);
 
     if (user) {
       onLogin();
       if (user.role === "admin") {
-        navigate("/admin"); // Admin dashboard
+        navigate("/admin");  // Correct admin route
       } else if (user.role === "employee") {
-        navigate("/employee"); // Employee dashboard
+        navigate("/employee");  // Correct employee route
       }
     } else {
       alert("Invalid email or password!");
@@ -57,10 +51,7 @@ const LoginPage = ({ onLogin }) => {
               className="mt-1 block w-full px-3 py-2 pl-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-mediumpurple-100 focus:border-mediumpurple-100 sm:text-sm input-grey"
               placeholder="email"
             />
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200"
-            />
+            <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200" />
           </div>
           <div className="relative">
             <input
@@ -73,10 +64,7 @@ const LoginPage = ({ onLogin }) => {
               className="mt-1 block w-full px-3 py-2 pl-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-mediumpurple-100 focus:border-mediumpurple-100 sm:text-sm input-grey"
               placeholder="password"
             />
-            <FontAwesomeIcon
-              icon={faKey}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200"
-            />
+            <FontAwesomeIcon icon={faKey} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-mediumpurple-200" />
           </div>
           <div>
             <button

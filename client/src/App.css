@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 * {
     margin: 0;
     padding: 0;
@@ -67,14 +71,12 @@ body, .main-content {
     color: #007bff;
 }
 
-
 .main-content {
     margin-left: 250px;
     padding: 20px;
     background-color: #f8f9fa;
     min-height: 100vh;
 }
-
 
 .header {
     display: flex;
@@ -97,7 +99,6 @@ body, .main-content {
     border-radius: 4px;
 }
 
-
 .dashboard .overview {
     display: flex;
     justify-content: space-between;
@@ -116,7 +117,6 @@ body, .main-content {
 .dashboard .overview .card h2, .dashboard .overview .card h3 {
     margin-bottom: 10px;
 }
-
 
 .employee-table {
     background-color: white;
@@ -143,7 +143,6 @@ body, .main-content {
 .employee-table table th {
     background-color: #f4f4f4;
 }
-
 
 .leave-requests table {
     width: 100%;
@@ -344,4 +343,3 @@ body, .main-content {
 .search-bar input:focus {
   border-color: #0056b3;
 }
-

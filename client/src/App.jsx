@@ -15,12 +15,13 @@ import ContactUs from "./pages/ContactPage.jsx";
 import AboutUs from "./pages/AboutPage.jsx";
 import WhoWeServe from "./pages/ServicesPage.jsx";
 import EmployeeDashboard from "./components/EmployeeDahboard.jsx";
+import AdminDashboardPage from './components/AdminDashboardPage';
 
 import "./App.css";
 
-function Dashboard() {
-  return <h1>Welcome to the DashBoard</h1>;
-}
+// function Dashboard() {
+//   return <h1>Welcome to the DashBoard</h1>;
+// }
 
 function App() {
   // Persist login state using localStorage
@@ -67,7 +68,8 @@ function App() {
                 )
               }
             >
-              <Route path="/admin" element={<Dashboard />} />
+              {/* <Route path="/admin" element={<Dashboard />} /> */}
+              <Route path="/admin" element={<AdminDashboardPage />} />
               <Route path="/admin/employees" element={<h1>Employees</h1>} />
               <Route path="/admin/departments" element={<h1>Departments</h1>} />
               <Route path="/admin/leave-requests" element={<h1>Leave Requests</h1>} />

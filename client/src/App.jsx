@@ -1,10 +1,16 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
 
-import { AppLayout } from "./layouts/index.jsx";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
-import HomePage from "./pages/HomePage.jsx";
+import {
+  LandingLayout,
+  AdminDashboardLayout,
+  EmployeeDashboardLayout,
+} from "./layouts/index";
+
+import LoginPage from "./pages/login";
+import HomePage from "./pages/home";
+
 import ContactUs from "./pages/ContactPage.jsx";
 import AboutUs from "./pages/AboutPage.jsx";
 import WhoWeServe from "./pages/ServicesPage.jsx";
@@ -17,45 +23,79 @@ function Dashboard() {
 }
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Persist login state using localStorage
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    () => localStorage.getItem("isLoggedIn") === "true"
+  );
+
+  // Check login state on component mount
+  useEffect(() => {
+    const storedLoginState = localStorage.getItem("isLoggedIn");
+    if (storedLoginState) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const handleLogin = () => {
     console.log("Logging in");
     setIsLoggedIn(true);
+    localStorage.setItem("isLoggedIn", true); // Store login state
   };
 
   const handleLogout = () => {
     console.log("Logging out");
     setIsLoggedIn(false);
+    localStorage.removeItem("isLoggedIn"); // Clear login state
   };
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route
-            element={
-              <AppLayout isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
-            }
-          >
+          <Route element={<LandingLayout isLoggedIn={isLoggedIn} />}>
+            <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+            <Route path="/" element={<HomePage />} exact />
+            
+            {/* Protected Routes */}
             <Route
-              path="/login"
-              element={<LoginPage onLogin={handleLogin} />}
-            />
-            <Route path="/" element={<HomePage />} exact={true} />
-            <Route path="/dashboard" element={<Dashboard />} />
+              path="/admin"
+              element={
+                isLoggedIn ? (
+                  <AdminDashboardLayout handleLogout={handleLogout} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            >
+              <Route path="/admin" element={<Dashboard />} />
+              <Route path="/admin/employees" element={<h1>Employees</h1>} />
+              <Route path="/admin/departments" element={<h1>Departments</h1>} />
+              <Route path="/admin/leave-requests" element={<h1>Leave Requests</h1>} />
+              <Route path="/admin/leave-allocation" element={<h1>Leave Allocations</h1>} />
+              <Route path="/admin/profile" element={<h1>Profile</h1>} />
+              <Route path="/admin/users" element={<h1>Users</h1>} />
+            </Route>
+
             <Route path="/about" element={<AboutUs />} />
             <Route path="/services" element={<WhoWeServe />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/employees" element={<h1>Employees</h1>} />
-            <Route path="/departments" element={<h1>Departments</h1>} />
-            <Route path="/leave-requests" element={<h1>Leave Requests</h1>} />
-            <Route path="/employee-dashboard" element={<EmployeeDashboard />} /> 
+
+            {/* Employee Dashboard Layout */}
             <Route
-              path="/leave-allocation"
-              element={<h1>Leave Allocations</h1>}
-            />
-            <Route path="/users" element={<h1>Users</h1>} />
+              path="/employee"
+              element={
+                isLoggedIn ? (
+                  <EmployeeDashboardLayout handleLogout={handleLogout} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            >
+              <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
+              <Route path="/employee/employees" element={<h1>Employees</h1>} />
+              <Route path="/employee/leave-requests" element={<h1>Leave Requests</h1>} />
+              <Route path="/employee/profile" element={<h1>Profile</h1>} />
+            </Route>
           </Route>
         </Routes>
       </div>

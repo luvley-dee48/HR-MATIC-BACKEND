@@ -23,6 +23,9 @@ const AdminNavBar = ({ handleLogout }) => {
         <Link to="/users" className="text-black">
           Users
         </Link>
+        <Link to="/users" className="text-black">
+          Profile
+        </Link>
       </div>
       <button
         className="bg-mediumpurple-100-90 text-white px-4 py-2 rounded"

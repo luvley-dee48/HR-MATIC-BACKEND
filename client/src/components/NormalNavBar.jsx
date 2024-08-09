@@ -4,9 +4,9 @@ export default function NormalNavBar() {
   return (
     <>
       <div className="nav-links flex space-x-4">
-        <a href="#" className="text-black">
+        <Link to="/" className="text-[#646cff] hover:text-[#535bf2]">
           HR Matic Solutions
-        </a>
+        </Link>
         <a href="#about" className="text-black">
           About Us
         </a>

@@ -1,4 +1,3 @@
-import React from "react";
 import StatCard from "./StatCard"; 
 
 const EmployeeDashboard = () => {
@@ -6,9 +5,9 @@ const EmployeeDashboard = () => {
     <div className="flex h-screen">
       {/* Sidebar */}
       <div className="w-64 bg-white text-black p-4 shadow-lg">
-        <h2 className="text-xl font-semibold mb-4">HR Matic</h2>
+        {/* <h2 className="text-xl font-semibold mb-4">HR Matic</h2> */}
         <ul>
-          <li className="mb-2">
+          {/* <li className="mb-2">
             <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Dashboard</a>
           </li>
           <li className="mb-2">
@@ -22,7 +21,7 @@ const EmployeeDashboard = () => {
           </li>
           <li className="mt-2">
             <a href="#" className="block p-2 hover:bg-[#A390FC] hover:text-white rounded-lg transition duration-300">Log Out</a>
-          </li>
+          </li> */}
         </ul>
       </div>
 

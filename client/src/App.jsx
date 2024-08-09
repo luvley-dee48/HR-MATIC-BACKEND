@@ -6,7 +6,7 @@ import Header from './components/Header';
 import LeaveAllocation from './components/LeaveAllocation';
 import LeaveRequests from './components/LeaveRequests';
 import Departments from './components/Departments';
-import Settings from './components/Settings';
+import Profile from './components/Profile';
 import Employee from './components/Employee';
 import './App.css';
 function App() {
@@ -23,7 +23,7 @@ function App() {
               <Route path="/leave-allocation" element={<LeaveAllocation />} />
               <Route path="/leave-requests" element={<LeaveRequests />} />
               <Route path="/departments" element={<Departments />} />
-              <Route path="/settings" element={<Settings />} />
+              <Route path="/profile" element={<Profile />} />
             
             </Routes>
           </div>

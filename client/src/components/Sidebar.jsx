@@ -18,7 +18,7 @@ const Sidebar = () => {
                     <li><Link to="/employees">Employees</Link></li>
                     <li><Link to="/leave-requests">Leave Requests</Link></li>
                     <li><Link to="/departments">Departments</Link></li>
-                    <li><Link to="/settings">Settings</Link></li>
+                    <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/logout">Log Out</Link></li>
                 </ul>
             </nav>

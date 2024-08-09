@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import AdminDashboardPage from "./components/AdminDashboardPage";
+import EmployeePage from "./components/EmployeePage";
 
 import {
   LandingLayout,
@@ -15,13 +17,8 @@ import ContactUs from "./pages/ContactPage.jsx";
 import AboutUs from "./pages/AboutPage.jsx";
 import WhoWeServe from "./pages/ServicesPage.jsx";
 import EmployeeDashboard from "./components/EmployeeDahboard.jsx";
-import AdminDashboardPage from './components/AdminDashboardPage';
 
 import "./App.css";
-
-// function Dashboard() {
-//   return <h1>Welcome to the DashBoard</h1>;
-// }
 
 function App() {
   // Persist login state using localStorage
@@ -68,9 +65,8 @@ function App() {
                 )
               }
             >
-              {/* <Route path="/admin" element={<Dashboard />} /> */}
               <Route path="/admin" element={<AdminDashboardPage />} />
-              <Route path="/admin/employees" element={<h1>Employees</h1>} />
+              <Route path="/admin/employees" element={<EmployeePage />} />
               <Route path="/admin/departments" element={<h1>Departments</h1>} />
               <Route path="/admin/leave-requests" element={<h1>Leave Requests</h1>} />
               <Route path="/admin/leave-allocation" element={<h1>Leave Allocations</h1>} />

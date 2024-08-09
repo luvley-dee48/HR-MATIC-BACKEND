@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom"; 
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+ 
+
 
 // eslint-disable-next-line react/prop-types
 export const AdminDashboardLayout = ({ handleLogout }) => {
+  
   return (
     <div className="flex h-screen">
-      <div className="w-64 bg-white text-black p-4 shadow-lg">
-        <h2 className="text-xl font-semibold mb-4">HR Matic</h2>
+      <div className="w-64 bg-white text-black p-4 shadow-lg">  
+       <img src="/src/assets/images/Logo2.png" alt="HR Matic Logo" className="mb-4 w-full object-contain" />
+
+        
         <ul>
           <li className="mb-2">
             <Link
@@ -75,7 +79,10 @@ export const AdminDashboardLayout = ({ handleLogout }) => {
           </li>
         </ul>
       </div>
-      <Outlet />
-    </div>
+      <div className="flex justify-center w-full mt-8">
+        <Outlet />
+      </div>
+    </div>  
   );
 };
+
